@@ -7,11 +7,22 @@
     */
 
     //Entrada
-
+    let bebidas = ["Cerveja", "Vinho", "Suco Natural", "Tequila", "Água", "Refrigerante", "Vodka"];
+    let bebidaMaior = []
+    let bebidaMenor = []
 
     //Processamento
-
+    for(let item of bebidas){
+        const alcool = prompt(`A bebida ${item} tem alcool? S/n`).toUpperCase().trim()
+        if(alcool=="S"){
+            bebidaMaior.push(item)
+        }
+        else{
+            bebidaMenor.push(item)
+        }
+    }
 
     //Saída
+    alert(`As bebidas que não tem alcool são: ${bebidaMenor.join(", ")}`)
 
 </script>
