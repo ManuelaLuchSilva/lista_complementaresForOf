@@ -8,11 +8,18 @@
     */
 
     //Entrada
-
+    let cores = ["Branco", "Azul", "Marrom", "Cinza", "Verde", "Amarelo", "Vermelho", "Preto"];
+    let coresLike = []
 
     //Processamento
-
+    for(let item of cores){
+        let like = prompt(`Você gosta da cor ${item}?S/N`).toUpperCase().trim()
+        if(like == "S"){
+            coresLike.push(item)
+        }
+    }
 
     //Saída
+    alert(`As cores que você prefere são: ${coresLike.join(", ")}\nTem ${coresLike.length} cores que gosta.`)
 
 </script>
