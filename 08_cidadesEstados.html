@@ -8,11 +8,80 @@
     */
 
     //Entrada
-    
+    let cidades = ["Porto Alegre", "Curitiba", "Florianópolis", "Joinville", "Blumenau", "Gramado", "Santa Maria", "Londrina", "Itajaí"];
+    let SC = [];
+    let RS = [];
+    let PR = [];
 
     //Processamento
+    for (let item of cidades) {
+        let estado = prompt(`A cidade ${item} é de qual estado?\n(SC||RS||PR)?`).toUpperCase().trim();
+        if (estado == "SC") {
+            SC.push(item);
+        }
+        else if (estado == "RS") {
+            RS.push(item);
+        }
+        else if (estado == "PR") {
+            PR.push(item);
+        }
+    }
 
 
     //Saída
+
+        if (SC.length > RS.length && SC.length > PR.length) {
+        if (RS.length > PR.length) {
+            alert(`Estado de SC: ${SC.join(", ")}.\nEstado de RS: ${RS.join(", ")}.\nEstado de PR: ${PR.join(", ")}.`)
+        }
+        else {
+            alert(`Estado de SC: ${SC.join(", ")}.\nEstado de PR: ${PR.join(", ")}.\nEstado de RS: ${RS.join(", ")}.`)
+        }
+    }
+    else if (RS.length > PR.length && RS.length > SC.length) {
+        if (PR.length > SC.length) {
+            alert(`Estado de RS: ${RS.join(", ")}.\nEstado de PR: ${PR.join(", ")}.\nEstado de SC: ${SC.join(", ")}.`)
+        }
+        else {
+            alert(`Estado de RS: ${RS.join(", ")}.\nEstado de SC: ${SC.join(", ")}.\nEstado de PR: ${PR.join(", ")}.`)
+        }
+    }
+    else if (PR.length > SC.length && PR.length > RS.length) {
+        if (SC.length > PR.length) {
+            alert(`Estado de PR: ${PR.join(", ")}.\nEstado de RS: ${RS.join(", ")}.\nEstado de SC: ${SC.join(", ")}.`)
+        }
+        else {
+            alert(`Estado de PR: ${PR.join(", ")}.\nEstado de SC: ${SC.join(", ")}.\nEstado de RS: ${RS.join(", ")}.`)
+        }
+    }
+    else {
+        if (SC.length == RS.length && SC.length == PR.length) {
+            alert(`Estado de SC: ${SC.join(", ")}.\nEstado de RS: ${RS.join(", ")}.\nEstado de PR: ${PR.join(", ")}.`)
+        }
+        else if (SC.length == RS.length) {
+            if (PR.length > SC.length) {
+                alert(`Estado de PR: ${PR.join(", ")}.\nEstado de RS: ${RS.join(", ")}.\nEstado de SC: ${SC.join(", ")}.`)
+            }
+            else {
+                alert(`Estado de SC: ${SC.join(", ")}.\nEstado de RS: ${RS.join(", ")}.\nEstado de PR: ${PR.join(", ")}.`)
+            }
+        }
+        else if (SC.length == PR.length) {
+            if (RS.length > SC.length) {
+                alert(`Estado de RS: ${RS.join(", ")}.\nEstado de SC: ${SC.join(", ")}.\nEstado de PR: ${PR.join(", ")}.`)
+            }
+            else{
+                alert(`Estado de SC: ${SC.join(", ")}.\nEstado de PR: ${PR.join(", ")}.\nEstado de RS: ${RS.join(", ")}.`) 
+            }
+        }
+        else if (RS.length == PR.length) {
+            if(SC.length>RS.length) {
+                alert(`Estado de SC: ${SC.join(", ")}.\nEstado de RS: ${RS.join(", ")}.\nEstado de PR: ${PR.join(", ")}.`)
+            }
+            else{
+                alert(`Estado de RS: ${RS.join(", ")}.\nEstado de PR: ${PR.join(", ")}.\nEstado de SC: ${SC.join(", ")}.`)
+            }
+        }
+    }
 
 </script>
