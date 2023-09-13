@@ -12,33 +12,11 @@
     let nomeSAcento = []
 
     //Processamento
-    for(let item of nomes){
-        if(item.indexOf("á") !=-1){
-            item.replace("á","a");
-            nomeSAcento.push(item)
-        }
-        else if(item.indexOf("é") !=-1){
-            item.replace("é","e");
-            nomeSAcento.push(item)
-        }
-        else if(item.indexOf("í") !=-1){
-            item.replace("í","i");
-            nomeSAcento.push(item)
-        }
-        else if(item.indexOf("ó") !=-1){
-            item.replace("ó","o");
-            nomeSAcento.push(item)
-        }
-        else if(item.indexOf("ú") !=-1){
-            item.replace("ú","u");
-            nomeSAcento.push(item)
-        }
-        else{
-            nomeSAcento.push(item);
-        }
+    for (let item of nomes) {
+        nomeSAcento.push(item.replace("á", "a").replace("é", "e").replace("í", "i").replace("ó", "o").replace("ú", "u"));
     }
 
     //Saída
-    document.write(`A lista de nomes agora é: <li>${nomeSAcento.join(", ")}</li>`)
+    document.write(`A lista de nomes agora é: ${nomeSAcento.join(", ")}.`)
 
 </script>
